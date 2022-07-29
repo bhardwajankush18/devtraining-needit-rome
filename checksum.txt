@@ -7,3 +7,32 @@ Site Key:
 
 Secret Key
 6LdjPykhAAAAAArgW8vxQTpmpZBZIYYhh3MYTvTc
+
+
+
+[2:00 AM, 7/29/2022] Ashish Jha Mrm: Now please do next work on issuer stock screener page and mutual fund screener page
+[2:01 AM, 7/29/2022] Ashish Jha Mrm: If there is no result, it should show:
+
+No matching records found (IN ENG) and in Arabic-
+ لا يوجد بيانات مُطابقة
+[2:02 AM, 7/29/2022] Ashish Jha Mrm: just belo data table header in both MF/stock screener page
+[2:03 AM, 7/29/2022] Ashish Jha Mrm: unlimitted scroll with normal client side code in both mutual fund screener and stock screener page
+[1:21 PM, 7/29/2022] Ashish Jha Mrm: EXCH-371. The labels should be aligned to the right 
+
+mutual funds screener
+http://192.168.14.234:10039/wps/portal/saudiexchange/newsandreports/mutual-fund-screener/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziTR3NDIw8LAz8DTxCnA3MDILdzUJDLAyNjI30w1EVWPi6mxkE-jkG-huZmxq4hxnoR5Gk3yA4wNQg0C3A19jHIMjA3cCMOP0GOIAjEfZHoSrB4gM0MzCdCFaAxw3BqXn6BbmhoREGmQHpjoqKAMVGozE!/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvYXI!/
+
+ 
+
+EXCH-367	mutual funds screener - Risk level is not clickable 
+
+http://192.168.14.234:10039/wps/portal/saudiexchange/newsandreports/mutual-fund-screener/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziTR3NDIw8LAz8DTxCnA3MDILdzUJDLAyNjI30w1EVWPi6mxkE-jkG-huZmxq4hxnoR5Gk3yA4wNQg0C3A19jHIMjA3cCMOP0GOIAjEfZHoSrB4gM0MzCdCFaAxw3BqXn6BbmhoREGmQHpjoqKAMVGozE!/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvYXI!/
+[2:31 PM, 7/29/2022] Ashish Jha Mrm: Risk level working in english but not in Arabic
+[8:42 PM, 7/29/2022] Ashish Jha Mrm: One change required in REIT page for dynacache reference change caches and steps:-
+
+Step-1 : Get update of tadawul.eportal.common project from SVN
+Step-2: Use below caches as specified(in attached excel mapping)
+
+    C1 – NO change
+    C2 -  PortalDynaCacheUtil.getInstance().getObjectCache1()
+    C3 -  PortalDynaCacheUtil.getInstance().getObjectCache2()
