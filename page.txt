@@ -1,0 +1,35 @@
+var lazyCount1 = 0;
+var dataShowLazy1 = true; 
+function getData(){
+  console.log('getData');
+  var lazyTableBoxSize = $('.fixed-table-body').length; 
+  lazyCount1 = lazyCount1 + 13;
+  for( var j = 0 ; j < lazyTableBoxSize; j++){
+    for( var i = 0 ; i < lazyCount1; i++){
+      $('.fixed-table-body').eq(j).find('tr').eq(i).addClass('showTr');
+    }
+  }
+}
+
+$('.fixed-table-body').on('scroll', function() {
+  $('.fixed-table-body').removeClass('activeLazyTable'); 
+  $(this).addClass('activeLazyTable');
+  if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+      if(dataShowLazy1 ==  true){
+          dataShowLazy1 = false;
+          getScrollData();
+          setTimeout(() => {
+            dataShowLazy1 = true;
+          }, 500);
+          console.log("lazyCount1::"+lazyCount1);
+      }
+  }
+});	
+
+function getScrollData(){
+  console.log('getScrollData');
+  lazyCount1 = lazyCount1 + 13;
+  for( var i = 0 ; i < lazyCount1; i++){
+    $('.fixed-table-body.activeLazyTable').find('tr').eq(i).addClass('showTr');
+  }
+}
