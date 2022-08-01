@@ -33,3 +33,134 @@ function getScrollData(){
     $('.fixed-table-body.activeLazyTable').find('tr').eq(i).addClass('showTr');
   }
 }
+
+
+
+
+
+--------------------------------------------------------------
+Regarding
+
+http://192.168.14.234:10039/wps/portal/saudiexchange/newsandreports/issuer-stock-screener
+
+ 
+
+script:-
+
+ 
+
+<script>
+
+setTimeout(() => {
+
+lazyCount1=0;
+
+getData();
+
+}, 1000);
+
+var lazyCount1 = 0;
+
+var dataShowLazy1 = true;
+
+function getData(){
+
+console.log('getData');
+
+var lazyTableBoxSize = $('.fixed-table-body').length;
+
+console.log("lazyTableBoxSize::"+lazyTableBoxSize);
+
+lazyCount1 = lazyCount1 + 13;
+
+for( var j = 0 ; j < lazyTableBoxSize; j++){
+
+for( var i = 0 ; i < lazyCount1; i++){
+
+console.log('enter');
+
+$('.fixed-table-body').eq(j).find('tr').eq(i).addClass('showTr');
+
+$('.fixed-table-body').addClass('activeLazyTable');
+
+}
+
+}
+
+}
+
+$('.fixedScroll').on('scroll', function() {
+
+console.log('sc');
+
+//$('.fixed-table-body').removeClass('activeLazyTable');
+
+$(this).addClass('activeLazyTable');
+
+if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+
+if(dataShowLazy1 == true){
+
+dataShowLazy1 = false;
+
+getScrollData();
+
+setTimeout(() => {
+
+dataShowLazy1 = true;
+
+}, 500);
+
+console.log("lazyCount1::"+lazyCount1);
+
+}
+
+}
+
+});
+
+function getScrollData(){
+
+console.log('getScrollData');
+
+lazyCount1 = lazyCount1 + 13;
+
+for( var i = 0 ; i < lazyCount1; i++){
+
+$('.fixed-table-body.activeLazyTable').find('tr').eq(i).addClass('showTr');
+
+}
+
+}
+
+</script>
+
+ 
+
+ 
+
+ 
+
+Html:-
+
+ 
+
+<div class="fixedScroll">
+
+              <table id=”table” data-toggle=”table” data-toolbar=”#toolbar” data-show-columns=”true”>
+
+                             <thead></thead>
+
+                             <tbody></tbody>
+
+              </table>
+
+</div>
+
+ 
+
+ 
+
+Please Refer this HTML
+
+http://52.4.81.127/htmls/exchange/v2/issuer-stock-screener.html
