@@ -37,6 +37,12 @@ function getScrollData(){
 
 
 
+C:\ankush\project new\new report project\App\src\sa\com\tadawul\applications\reports\constants
+populateFinancialIndicators
+
+
+
+
 
 --------------------------------------------------------------
 Regarding
